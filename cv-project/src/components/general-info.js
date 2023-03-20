@@ -12,27 +12,12 @@ class General extends Component {
         }
     }
 
-    handleNameChange = (e) => {
-        this.setState({
-            name: e.target.value,
-            email: this.state.email,
-            phone: this.state.phone,
-        })
-    }
-
-    handleEmailChange = (e) => {
-        this.setState({
-            name: this.state.name,
-            email: e.target.value,
-            phone: this.state.phone,
-        })
-    }
-
-    handlePhoneChange = (e) => {
+    handleChange = (e) => {
         this.setState({
             name: this.state.name,
             email: this.state.email,
-            phone: e.target.value,
+            phone: this.state.phone,
+            [e.target.name]: e.target.value,
         })
     }
 
@@ -55,11 +40,11 @@ class General extends Component {
                 <h1>General Information</h1>
                 <form className='generalInfoForm'>
                     <label htmlFor='name'>Name: </label>
-                    <input onChange={this.handleNameChange} type='text' id='name'/>
+                    <input onChange={this.handleChange} type='text' id='name' name='name'/>
                     <label htmlFor='mail'>Email: </label>
-                    <input onChange={this.handleEmailChange} type='email' id='mail'/>
+                    <input onChange={this.handleChange} type='email' id='mail' name='mail'/>
                     <label htmlFor='phone'>Phone: </label>
-                    <input onChange={this.handlePhoneChange} type='text' id='phone'/>
+                    <input onChange={this.handleChange} type='text' id='phone' name='phone'/>
                     <button onClick={this.submitGeneral} type='submit'>Submit General</button>
                 </form>
                 <div className='hidden generalInfo'>
