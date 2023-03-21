@@ -41,8 +41,8 @@ class General extends Component {
                 <form className='generalInfoForm'>
                     <label htmlFor='name'>Name: </label>
                     <input onChange={this.handleChange} type='text' id='name' name='name'/>
-                    <label htmlFor='mail'>Email: </label>
-                    <input onChange={this.handleChange} type='email' id='mail' name='mail'/>
+                    <label htmlFor='email'>Email: </label>
+                    <input onChange={this.handleChange} type='email' id='email' name='email'/>
                     <label htmlFor='phone'>Phone: </label>
                     <input onChange={this.handleChange} type='text' id='phone' name='phone'/>
                     <button onClick={this.submitGeneral} type='submit'>Submit General</button>

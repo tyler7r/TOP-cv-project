@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import General from './components/general-info';
-import Education from './components/educational-info';
+import Education from './components/education-comp/educational-info';
 import Experience from './components/experience-info';
 
 class App extends Component {
@@ -22,10 +22,9 @@ class App extends Component {
   }
 
   render() {
-    const { general } = this.state;
     return (
       <div>
-        <General general={general}/>
+        <General />
         <Education />
         <Experience />
       </div>
