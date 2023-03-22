@@ -96,17 +96,17 @@ class Experience extends Component {
                     <input className='experienceInput' onChange={this.handleChange} type='text' id='company' name='company'/>
                     <label htmlFor='responsibilities'>Job Responsibilities: </label>
                     <input className='experienceInput' onChange={this.handleChange} type='text' id='responsibilities' name='responsibilities' />
-                    <label htmlFor='exStartYear'>Start Year: </label>
-                    <input className='experienceInput' onChange={this.handleChange} type='text' id='exStartYear' name='exStartYear' />
-                    <label htmlFor='exFinishYear'>Finish Year: </label>
-                    <input className='experienceInput' onChange={this.handleChange} type='text' id='exFinishYear' name='exFinishYear' />
+                    <label htmlFor='exstartYear'>Start Year: </label>
+                    <input className='experienceInput' onChange={this.handleChange} type='text' id='exstartYear' name='exstartYear' />
+                    <label htmlFor='exfinishYear'>Finish Year: </label>
+                    <input className='experienceInput' onChange={this.handleChange} type='text' id='exfinishYear' name='exfinishYear' />
                     <button onClick={this.submitBtn} className='exSubmitBtn' type='submit'>Submit Experience</button>
                 </form>
                 <div className='experienceInfo hidden'>
                     {this.state.overall.map((item) => {
                         return (
                             <div key={item.id} className='experienceItem'>
-                                {item.title}, {item.company}, {item.responsibilities}, {item.startYear}, {item.finishYear}
+                                {item.title}, {item.company}, {item.responsibilities}, {item.exstartYear}, {item.exfinishYear}
                                 <button onClick={() => this.editBtn(item)} className={`editButton ex${item.id}`}>Edit Entry</button>
                                 <button onClick={() => this.deleteBtn(item.id)} className={`deleteBtn ex${item.id}`}>Delete Entry</button>
                                 <EditExperience array={overall} num={item.id} rerender={this.editState}/>
