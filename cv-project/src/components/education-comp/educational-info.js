@@ -66,7 +66,6 @@ class Education extends Component {
 
     addBtn = (e) => {
         document.querySelector('.educationForm').classList.remove('hidden');
-        console.log(this.state);
     }
 
     editBtn = (i) => {
