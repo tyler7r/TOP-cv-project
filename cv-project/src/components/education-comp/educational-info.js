@@ -17,6 +17,15 @@ class Education extends Component {
                 id: 0,
             }
         }
+
+        this.deleteBtn = this.deleteBtn.bind(this);
+        this.editState = this.editState.bind(this);
+    }
+
+    editState() {
+        this.setState({
+            overall: this.state.overall,
+        })
     }
 
     handleChange = (e) => {
@@ -57,16 +66,15 @@ class Education extends Component {
 
     addBtn = (e) => {
         document.querySelector('.educationForm').classList.remove('hidden');
+        console.log(this.state);
     }
 
     editBtn = (i) => {
-        // document.querySelector('.educationForm').classList.remove('hidden');
-        document.querySelector('#school').value = i.school;
-        document.querySelector('#degree').value = i.degree;
-        document.querySelector('#major').value = i.major;
-        document.querySelector('#startYear').value = i.startYear;
-        document.querySelector('#finishYear').value = i.finishYear;
-        document.querySelector('.educationInfo').classList.add('hidden');
+        document.querySelector(`#no${i.id}`).classList.remove('hidden');
+        let buttons = document.querySelectorAll(`.no${i.id}`);
+        buttons.forEach(button => {
+            button.classList.add('hidden');
+        })
         document.querySelector('.addBtn').classList.remove('hidden');
     }
 
@@ -78,6 +86,7 @@ class Education extends Component {
     }
 
     render() {
+        const { overall } = this.state;
         return (
             <div>
                 <h1>Education Section</h1>
@@ -95,15 +104,16 @@ class Education extends Component {
                     <button onClick={this.submitBtn} className='submitBtn' type='submit'>Submit Education</button>
                 </form>
                 <div className='educationInfo hidden'>
-                        {this.state.overall.map((item) => {
-                            return (
-                                <div key={item.id} className='educationItem'>
-                                    {item.school}, {item.degree}, {item.major}, {item.startYear}, {item.finishYear}
-                                    <button onClick={() => <EditEducation />}>Edit Entry</button>
-                                    <button onClick={() => this.deleteBtn(item.id)} className='deleteBtn'>Delete Entry</button>
-                                </div>
-                            )
-                        })}
+                    {this.state.overall.map((item) => {
+                        return (
+                            <div key={item.id} className='educationItem'>
+                                {item.school}, {item.degree}, {item.major}, {item.startYear}, {item.finishYear}
+                                <button onClick={() => this.editBtn(item)} className={`editButton no${item.id}`}>Edit Entry</button>
+                                <button onClick={() => this.deleteBtn(item.id)} className={`deleteBtn no${item.id}`}>Delete Entry</button>
+                                <EditEducation array={overall} num={item.id} rerender={this.editState}/>
+                            </div>
+                        )
+                    })}
                 </div>
                 <button onClick={this.addBtn} className='addBtn hidden'>Add Education Entry</button>
             </div>
