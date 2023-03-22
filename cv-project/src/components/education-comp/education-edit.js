@@ -37,6 +37,10 @@ class EditEducation extends Component {
         this.array[this.num].startYear = this.state.estartYear;
         this.array[this.num].finishYear = this.state.efinishYear;
         document.querySelector(`#no${this.num}.educationEditForm`).classList.add('hidden');
+        let buttons = document.querySelectorAll(`.no${this.num}`);
+        buttons.forEach((button) => {
+            button.classList.remove('hidden');
+        })
         this.props.rerender();
     }
 

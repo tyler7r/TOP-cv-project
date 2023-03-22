@@ -12,8 +12,8 @@ class Experience extends Component {
                 title: '',
                 company: '',
                 responsibilities: '',
-                startYear: '',
-                finishYear: '',
+                exstartYear: '',
+                exfinishYear: '',
                 id: 0,
             }
         }
@@ -34,8 +34,8 @@ class Experience extends Component {
                 title: this.state.individual.title,
                 company: this.state.individual.company,
                 responsibilities: this.state.individual.responsibilities,
-                startYear: this.state.individual.startYear,
-                finishYear: this.state.individual.finishYear,
+                exstartYear: this.state.individual.exstartYear,
+                exfinishYear: this.state.individual.exfinishYear,
                 id: this.state.individual.id,
                 [e.target.name]: e.target.value,
             }
@@ -50,8 +50,8 @@ class Experience extends Component {
                 title: '',
                 company: '',
                 responsibilities: '',
-                startYear: '',
-                finishYear: '',
+                exstartYear: '',
+                exfinishYear: '',
                 id: this.state.individual.id + 1,
             }
         })

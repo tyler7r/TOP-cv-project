@@ -11,8 +11,8 @@ class EditExperience extends Component {
             extitle: this.array[this.num].title,
             excompany: this.array[this.num].company,
             exresponsibilities: this.array[this.num].responsibilities,
-            exstartYear: this.array[this.num].startYear,
-            exfinishYear: this.array[this.num].finishYear,
+            eexstartYear: this.array[this.num].startYear,
+            eexfinishYear: this.array[this.num].finishYear,
             id: this.num,
         }
     }
@@ -22,8 +22,8 @@ class EditExperience extends Component {
             extitle: this.state.extitle,
             excompany: this.state.excompany,
             exresponsibilities: this.state.exresponsibilities,
-            exstartYear: this.state.exstartYear,
-            exfinishYear: this.state.exfinishYear,
+            eexstartYear: this.state.eexstartYear,
+            eexfinishYear: this.state.eexfinishYear,
             id: this.state.id,
             [e.target.name]: e.target.value,
         })
@@ -34,8 +34,8 @@ class EditExperience extends Component {
         this.array[this.num].title = this.state.extitle;
         this.array[this.num].company = this.state.excompany;
         this.array[this.num].responsibilities = this.state.exresponsibilities;
-        this.array[this.num].startYear = this.state.exstartYear;
-        this.array[this.num].finishYear = this.state.exfinishYear;
+        this.array[this.num].exstartYear = this.state.eexstartYear;
+        this.array[this.num].exfinishYear = this.state.eexfinishYear;
         document.querySelector(`#ex${this.num}.experienceEditForm`).classList.add('hidden');
         let buttons = document.querySelectorAll(`.ex${this.num}`)
         buttons.forEach((button) => {
