@@ -87,8 +87,8 @@ class Experience extends Component {
     render() {
         const { overall } = this.state;
         return (
-            <div>
-                <h1>Experience Section</h1>
+            <div className='experienceSection content'>
+                <h1>EXPERIENCES</h1>
                 <form className='experienceForm'>
                     <label htmlFor='title'>Job Title: </label>
                     <input className='experienceInput' onChange={this.handleChange} type='text' id='title' name='title'/>
@@ -106,7 +106,11 @@ class Experience extends Component {
                     {this.state.overall.map((item) => {
                         return (
                             <div key={item.id} className='experienceItem'>
-                                {item.title}, {item.company}, {item.responsibilities}, {item.exstartYear}, {item.exfinishYear}
+                                <div className='title'>Job Title: {item.title}</div>
+                                <div className='company'>Company: {item.company}</div>
+                                <div className='responsibilities'>Responsibilities: {item.responsibilities}</div>
+                                <div className='exstartYear'>Start: {item.exstartYear}</div>
+                                <div className='exfinishYear'>Finish: {item.exfinishYear}</div>
                                 <button onClick={() => this.editBtn(item)} className={`editButton ex${item.id}`}>Edit Entry</button>
                                 <button onClick={() => this.deleteBtn(item.id)} className={`deleteBtn ex${item.id}`}>Delete Entry</button>
                                 <EditExperience array={overall} num={item.id} rerender={this.editState}/>

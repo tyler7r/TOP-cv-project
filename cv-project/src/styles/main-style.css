@@ -1,0 +1,92 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(202, 241, 255, 0.8);
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+h1 {
+    color: gray;
+    border-bottom: 6px solid white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    margin: 0px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 234, 234, 0.6);
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 8px;
+    width: 95%;
+    gap: 8px;
+}
+
+.educationInfo {
+    display: flex;
+    gap: 8px;
+}
+
+.educationItem {
+    border: 3px solid rgb(179, 224, 239, 0.6);
+    border-radius: 4px;
+    padding: 8px;
+    gap: 2px;
+    display: grid;
+    text-align: center;
+    font-weight: bold;
+}
+
+.experienceInfo {
+    display: flex;
+    gap: 8px;
+}
+
+.experienceItem {
+    border: 3px solid rgb(179, 224, 239, 0.6);
+    border-radius: 4px;
+    gap: 2px;
+    padding: 8px;
+    display: grid;
+    text-align: center;
+    font-weight: bold;
+}
+
+.editButton, .deleteBtn {
+    font-weight: bold;
+    padding: 4px;
+    justify-self: center;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: white;
+    color: gray;
+}
+
+.generalInfo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hidden {
+    display: none;
+}
+

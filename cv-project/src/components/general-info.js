@@ -36,8 +36,8 @@ class General extends Component {
 
     render() {
         return (
-            <div>
-                <h1>General Information</h1>
+            <div className='generalSection content'>
+                <h1>GENERAL</h1>
                 <form className='generalInfoForm'>
                     <label htmlFor='name'>Name: </label>
                     <input onChange={this.handleChange} type='text' id='name' name='name'/>
@@ -47,7 +47,7 @@ class General extends Component {
                     <input onChange={this.handleChange} type='text' id='phone' name='phone'/>
                     <button onClick={this.submitGeneral} type='submit'>Submit General</button>
                 </form>
-                <div className='hidden generalInfo'>
+                <div className='hidden generalInfo '>
                     <h3>Name: {this.state.name}</h3>
                     <h3>Email: {this.state.email}</h3>
                     <h3>Phone: {this.state.phone}</h3>
